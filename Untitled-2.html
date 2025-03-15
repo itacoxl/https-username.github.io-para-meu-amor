@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Leah, Minha Princesa 💖</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #000000, #8B0000);
+            color: #fff;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+        h1 {
+            font-size: 3em;
+            margin-top: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        h2 {
+            font-size: 1.5em;
+        }
+        #counter {
+            font-size: 2em;
+            color: #fff;
+            margin: 20px 0;
+            animation: pulse 1.5s infinite alternate;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        #button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #slideButton, #slideButtonEnd {
+            font-size: 2em;
+            padding: 20px 40px;
+            color: #fff;
+            background-color: #8B0000;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        #slideButton:hover, #slideButtonEnd:hover {
+            background-color: #a83232;
+            transform: scale(1.1);
+        }
+        .slideshow-container {
+            position: relative;
+            width: 80%;
+            max-width: 400px;
+            height: 400px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            background: #1a0000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 8px solid #000000;
+            transition: border-radius 1s ease-in-out;
+        }
+        .slide {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            margin: auto;
+            opacity: 0;
+            position: absolute;
+            transition: opacity 1s ease-in-out;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+        .text {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 40px auto;
+            width: 80%;
+            font-size: 1.2em;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .emoji {
+            font-size: 2em;
+        }
+        .heart {
+            position: fixed;
+            top: -10vh;
+            color: red;
+            font-size: 20px;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10vh); }
+            100% { transform: translateY(110vh); }
+        }
+        .content, .content-hidden {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: none;
+        }
+        .content.active, .content-hidden.active {
+            opacity: 1;
+            display: block;
+        }
+        #button-container-end {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        #button-container-end.active {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div id="button-container">
+        <button id="slideButton">CLICK ❤</button>
+    </div>
+
+    <div class="content-hidden" id="mainContent">
+        <h1>Para Leah, Minha Princesa 💖</h1>
+        <h2>Nosso Relógio do Amor ⏳</h2>
+        <p>Este temporizador começou a contar no instante em que trocamos nossas primeiras palavras. Foi o início de uma história de amor que continua a crescer a cada dia. Naquele momento, senti um calor suave que nunca havia experimentado antes. Foi como se o mundo ao nosso redor ficasse em silêncio, e tudo o que importava fosse a conexão que estávamos construindo.</p>
+        <p>Cada segundo que passa desde aquela primeira conversa lembra o quanto evoluímos juntos. Nossos corações encontraram um ritmo sincronizado, e cada batida celebra o amor que cultivamos. Aquela conversa foi mais do que palavras; foi um encontro de almas.</p>
+        <p>Com o tempo, nossa relação se fortaleceu e o amor se tornou a base de tudo o que fazemos. Este temporizador é mais do que um contador de tempo; é um símbolo do nosso compromisso e carinho. Ele representa cada momento em que nos apoiamos, cada sorriso compartilhado e cada promessa de estar juntos.</p>
+        <p>Enquanto o temporizador continua a marcar o tempo, ele também nos lembra que o futuro está cheio de possibilidades maravilhosas. Juntos, criaremos mais memórias, enfrentaremos desafios e celebraremos vitórias. O amor que começou com aquelas primeiras palavras continuará a ser o centro de tudo.</p>
+        <p>Este temporizador não é apenas sobre o tempo passado, mas sobre o tempo que ainda temos para criar nossa história juntos. Desde o primeiro momento em que nos falamos, nossas vidas mudaram para sempre. E estou ansioso para ver onde essa jornada nos levará, sabendo que, com você ao meu lado, cada segundo é precioso e cheio de amor.</p>
+        <div id="counter"></div>
+
+        <div class="content active" id="content1">
+            <div class="slideshow-container" id="slideshow">
+                <img class="slide active" src="https://media.discordapp.net/attachments/972644824996016128/1350560917594574888/foto1.jpg?ex=67d72f5e&is=67d5ddde&hm=5767e343c1e023e417380d049e6fa570f6adfb5bb8cc17b823394c51f0d8a47d&=&format=webp&width=486&height=864" alt="Foto 1">
+                <img class="slide" src="https://media.discordapp.net/attachments/972644824996016128/1350560917997223986/foto2.jpg?ex=67d72f5f&is=67d5dddf&hm=ced728fe0f07bfbf9ba8b98f972e37edcb0f26034ef5bc73411852bed466a01a&=&format=webp&width=1152&height=864" alt="Foto 2">
+                <img class="slide" src="https://media.discordapp.net/attachments/972644824996016128/1350560918366457946/foto3.jpg?ex=67d72f5f&is=67d5dddf&hm=4638675ff6a223dc7032ee3d0d7e5cec43c3fd4d4bd36b64b35b279555372052&=&format=webp&width=1536&height=864" alt="Foto 3">
+                <img class="slide" src="https://media.discordapp.net/attachments/972644824996016128/1350560918789951609/foto4.jpg?ex=67d72f5f&is=67d5dddf&hm=3b41dd902c394141cfe68ad4d00a3c2585471c09f811c79f9a14baae2215a54a&=&format=webp&width=486&height=864" alt="Foto 4">
+                <img class="slide" src="https://media.discordapp.net/attachments/972644824996016128/1350560919121297428/foto5.jpg?ex=67d72f5f&is=67d5dddf&hm=0027f2c9761cac0f6a6069d7c6bace56898bbe5626b7de6e42dd28a5636a9370&=&format=webp&width=1152&height=864" alt="Foto 5">
+                <img class="slide" src="https://media.discordapp.net/attachments/972644824996016128/1350560919607971871/foto6.jpg?ex=67d72f5f&is=67d5dddf&hm=8fa99bb9e35f6f5906ef31d822d4b52262e49329471dbac128d4ec85345a2f6c&=&format=webp&width=1536&height=864" alt="Foto 6">
+                <img class="slide" src="https://media.discordapp.net/attachments/972644824996016128/1350560919947579565/foto7.jpg?ex=67d72f5f&is=67d5dddf&hm=326d917e76aff71d0ef333895a670046c273da39de5da6975bf623e8a8d0a8d2&=&format=webp&width=1152&height=864" alt="Foto 7">
+            </div>
+
+            <div id="button-container-end">
+                <button id="slideButtonEnd">CLICK ❤</button>
+            </div>
+        </div>
+
+        <div class="content" id="content2">
+            <div class="text">
+                <p>Leandra, desde o momento em que te conheci, algo dentro de mim mudou. Foi como se o mundo ficasse mais bonito, como se cada segundo ganhasse um novo significado só porque você estava nele. Você é mais do que um amor, Leah, você é o meu destino, minha paz, meu motivo para sorrir todos os dias.</p>
+                <p>Cada dia ao seu lado é um presente que a vida me deu. O tempo passa, mas o que sinto por você só cresce, como se cada batida do meu coração sussurrasse o seu nome. Amo cada detalhe seu, cada gesto, cada riso, cada olhar que me faz perder o fôlego. Você é a poesia mais linda que a vida já escreveu, e eu sou o mais sortudo dos homens por poder chamá-la de minha.</p>
+                <p>Não importa o que aconteça, eu estarei aqui, sempre pronto para te amar, para segurar sua mão e enfrentar o mundo ao seu lado. Porque amar você, Leah, é a certeza mais linda que eu já tive.</p>
+                <p>Porque, Leah, quando olho para você, vejo mais do que apenas a mulher incrível que amo. Vejo o meu lar, o meu refúgio, o abraço que acalma qualquer tempestade. Você é aquela que transforma dias comuns em momentos inesquecíveis, que ilumina minha vida com o brilho do seu sorriso.</p>
+                <p>Cada "eu te amo" que digo nunca será suficiente para expressar o tamanho do que sinto por você. Meu coração encontrou sua morada no seu, e nada no mundo poderia me fazer querer estar em outro lugar. O tempo pode passar, os dias podem mudar, mas uma coisa nunca será diferente: o meu amor por você.</p>
+                <p>Eu quero estar ao seu lado em cada amanhecer, quero segurar sua mão em cada desafio, quero rir com você nas pequenas alegrias da vida. Quero construir sonhos juntos, contar os dias do nosso amor, celebrar cada instante como se fosse o primeiro.</p>
+                <p>Leah, você é minha melhor escolha, meu presente mais valioso, a história mais linda que já vivi. Obrigado por ser você, por ser minha, por me permitir te amar com toda intensidade do meu ser.</p>
+                <p>E que venham mais dias, meses, anos… porque ao seu lado, a eternidade ainda parece pouco. ❣ Te amo hoje, amanhã e para sempre. 💘</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const dataInicial = new Date("2025-01-07T18:07:00");
+        const contador = document.getElementById("counter");
+
+        function atualizarContador() {
+            const agora = new Date();
+            const tempoDecorrido = agora - dataInicial;
+            const meses = Math.floor(tempoDecorrido / (1000 * 60 * 60 * 24 * 30));
+            const dias = Math.floor((tempoDecorrido % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((tempoDecorrido % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((tempoDecorrido % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((tempoDecorrido % (1000 * 60)) / 1000);
+            contador.innerHTML = `${meses}m ${dias}d ${horas}h ${minutos}m ${segundos}s 💑`;
+        }
+        setInterval(atualizarContador, 1000);
+        atualizarContador();
+
+        let index = 0;
+        const slides = document.querySelectorAll(".slide");
+        const slideshowContainer = document.getElementById("slideshow");
+        const borderStyles = ["20px", "50px", "10px", "30px", "40px", "25px", "60px"];
+        function showNextSlide() {
+            slides[index].classList.remove("active");
+            index = (index + 1) % slides.length;
+            slides[index].classList.add("active");
+            slideshowContainer.style.borderRadius = borderStyles[index];
+        }
+        const slideshowInterval = setInterval(showNextSlide, 3000);
+
+        function createHearts() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+        setInterval(createHearts, 500);
+
+        const slideButton = document.getElementById("slideButton");
+        const slideButtonEnd = document.getElementById("slideButtonEnd");
+        const mainContent = document.getElementById("mainContent");
+        const buttonContainer = document.getElementById("button-container");
+        const buttonContainerEnd = document.getElementById("button-container-end");
+
+        slideButton.addEventListener("click", () => {
+            buttonContainer.style.display = 'none';
+            mainContent.classList.add("active");
+            setTimeout(() => {
+                buttonContainerEnd.classList.add("active");
+                clearInterval(slideshowInterval); // Parar o slideshow após todas as fotos
+            }, slides.length * 3000); // Espera por todas as fotos serem exibidas
+        });
+
+        slideButtonEnd.addEventListener("click", () => {
+            document.getElementById("content1").classList.remove("active");
+            document.getElementById("content2").classList.add("active");
+        });
+    </script>
+</body>
+</html>
